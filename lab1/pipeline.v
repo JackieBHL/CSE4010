@@ -1,19 +1,5 @@
-// Class: CSCI 401 Computer Architecture
-// Term: SPR11
-// Name(s): 
-//
-// Lab #1: Instruction Fetch Stage
+// Class: CSE 4010 Computer Architecture
 
-//                              -*- Mode: Verilog -*-
-// Filename        : pipeline.v
-// Description     : The pipeline module which simulates the
-//                   function of the IF stage of the pipeline
-// Authors         : George M. Georgiou and Scott McWilliams
-// Created On      : 2/06/2003
-// Modified On     : 4/5/2011
-// Modified By     : Jason Fredrick and David Sturgeon
-
-//`include "ifetch.v"
 
 module pipeline ();
 
