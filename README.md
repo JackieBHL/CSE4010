@@ -1,1 +1,2 @@
-# CSE4010
+# CSE4010 lab
+CSUSB Fall 2020
