@@ -30,36 +30,7 @@ module pipeline ();
    EX_MEM_PCSrc <= 0;
    EX_MEM_NPC <= 0;
    end
-   
-// Here you will add I_DECODE.  You will have to declare wires to make 
-    wire	[4:0]		MEM_WB_rd;
-	wire				MEM_WB_regwrite;
-	wire	[31:0]	WB_mux5_writedata;	
-	wire	[1:0]		wb_ctlout;
-	wire	[2:0]		m_ctlout;
-	wire				regdst, alusrc;
-	wire	[1:0]		aluop; 
-	wire	[31:0]	npcout, rdata1out, rdata2out, s_extendout;
-	wire	[4:0]		instrout_2016, instrout_1511;
 
-	IDECODE IDECODE2	(.IF_ID_instrout(IF_ID_instrout),
-							.IF_ID_npcout(IF_ID_npcout),
-							.MEM_WB_rd(MEM_WB_rd),
-							.MEM_WB_regwrite(MEM_WB_regwrite),
-							.WB_mux5_writedata(WB_mux5_writedata),
-							.wb_ctlout(wb_ctlout),
-							.m_ctlout(m_ctlout),
-							.regdst(regdst),
-							.aluop(aluop),
-							.alusrc(alusrc),
-							.npcout(npcout),
-							.rdata1out(rdata1out),
-							.rdata2out(rdata2out),
-							.s_extendout(s_extendout),
-							.instrout_2016(instrout_2016),
-							.instrout_1511(instrout_1511));
-
-// the connections between the I_FETCH and I_DECODE modules
 
 endmodule // pipeline
 
