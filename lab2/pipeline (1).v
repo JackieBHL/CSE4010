@@ -1,20 +1,5 @@
-// Class: CSCI 401 Computer Architecture
-// Term: SPR11
+// Class: CSE 4010 Computer Architecture
 // Name(s): 
-//
-// Lab #1: Instruction Fetch Stage
-
-//                              -*- Mode: Verilog -*-
-// Filename        : pipeline.v
-// Description     : The pipeline module which simulates the
-//                   function of the IF stage of the pipeline
-// Authors         : George M. Georgiou and Scott McWilliams
-// Created On      : 2/06/2003
-// Modified On     : 4/5/2011
-// Modified By     : Jason Fredrick and David Sturgeon
-
-//`include "ifetch.v"
-
 module pipeline ();
 
   wire [31:0] IF_ID_instr, IF_ID_npc;
@@ -55,41 +40,9 @@ module pipeline ();
 							.instrout_2016(instrout_2016),
 							.instrout_1511(instrout_1511));
 
-// the connections between the I_FETCH and I_DECODE modules
 
-//exicute
-    wire	[1:0]		wb_ctlout_pipe;
-	wire				branch, memread, memwrite;
-	wire				zero;
-	wire	[31:0]	alu_result, rdata2out_pipe;
-	wire	[4:0]		five_bit_muxout;
-    EXECUTE EXECUTE3(
-                    .wb_ctl(wb_ctlout),  		
-                    .m_ctl(m_ctlout),
-                    
-                    .regdst(regdst), 
-                    .alusrc(alusrc),
-                    .aluop(aluop), 
-                    .npcout(npcout), 
-                    .rdata1(rdata1out), 
-                    .rdata2(rdata2out), 
-                    .s_extendout(s_extendout),
-                    .instrout_2016(instrout_2016), 
-                    .instrout_1511(instrout_1511),
-                    //outputs
-                    .wb_ctlout(wb_ctlout_pipe),	
-                    .branch(branch), 
-                    .memread(memread), 
-                    .memwrite(memwrite),
-                    .add_result(EX_MEM_NPC), 	
-                    .zero(zero),
-                    .alu_result(alu_result), 
-                    .rdata2out(rdata2out_pipe),
-                    .five_bit_muxout(five_bit_muxout)
-                    );  
 initial begin
    EX_MEM_PCSrc <= 0;
-   //EX_MEM_NPC <= 0;
    MEM_WB_rd <= 0;
    MEM_WB_regwrite <= 0;
    WB_mux5_writedata <= 0;
